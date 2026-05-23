@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 import io
-import datetime
+from datetime import datetime
 import torch
 from transformers import pipeline
 
@@ -24,15 +24,15 @@ st.set_page_config(
 
 # 3: Initialize session state variables
 # Initialize session state for analyzed_images (empty list)
-if None not in st.session_state:
+if 'analyzed_images' not in st.session_state:
     st.session_state.analyzed_images = []
 
 # Initialize session state for model_loaded (False)
-if None not in st.session_state:
+if 'model_loaded' not in st.session_state:
     st.session_state.model_loaded = False
 
 # Initialize session state for classifier (None)
-if None not in st.session_state:
+if 'classifier' not in st.session_state:
     st.session_state.classifier = None
 
 # 4: Create model loading function with caching
